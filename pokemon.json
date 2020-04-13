@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "bulbasaur",
+    "type": "grass",
+    "owner": "ash"
+  },
+  {
+    "id": 4,
+    "name": "charmander",
+    "type": "fire",
+    "owner": "brook"
+  },
+  {
+    "id": 10,
+    "name": "caterpie",
+    "type": "insect",
+    "owner": "ash"
+  },
+  {
+    "id": 12,
+    "name": "buterFree",
+    "type": "insect",
+    "owner": "ash"
+  },
+  {
+    "id": 19,
+    "name": "rattata",
+    "type": "normal",
+    "owner": "brook"
+  }
+]

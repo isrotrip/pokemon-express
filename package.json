@@ -1,0 +1,16 @@
+{
+  "name": "pokemon-application",
+  "version": "1.0.0",
+  "description": "Buatlah sebuah class bernama Pokemon, yang memiliki properties sebagai berikut:",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.2",
+    "express": "^4.17.1"
+  }
+}

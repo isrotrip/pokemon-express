@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokemons</title>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+<body>
+  <form action="/pokemons" method="GET">
+    <input type="text" name="type" value="" placeholder="type"><br>
+    <input type="submit" value="Submit"><br>
+  </form>
+
+  <table>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>type</th>
+      <th>owner</th>
+    </tr>
+    <% for (let i = 0; i < pokemons.length; i++) { %>
+      <tr>
+        <td><%= pokemons[i].id %></td>
+        <td><%= pokemons[i].name %></td>
+        <td><%= pokemons[i].type %></td>
+        <td><%= pokemons[i].owner %></td>
+      </tr>
+    <% } %>
+  </table>
+</body>
+</html>
