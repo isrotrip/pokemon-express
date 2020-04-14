@@ -30,7 +30,7 @@ class Model {
   }
 
   static createPokemon(pokemon, cb) {
-    Model.readPokemons(function (err, pokemons) {
+    Model.readPokemons(null, function (err, pokemons) {
       if (err) {
         cb(err);
       } else {

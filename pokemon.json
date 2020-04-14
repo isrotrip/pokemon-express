@@ -28,5 +28,11 @@
     "name": "rattata",
     "type": "normal",
     "owner": "brook"
+  },
+  {
+    "id": 24,
+    "name": "arbok",
+    "type": "poison",
+    "owner": "team rocket"
   }
 ]

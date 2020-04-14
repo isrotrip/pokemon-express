@@ -3,49 +3,20 @@ const app = express();
 const port = 3000;
 
 app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); // req.body
 
-const Model = require('./models/model.js');
+// cara pertama - best practice
+const router = require('./routes/index.js');
+// http://localhost:3000/pokemons
 
-app.get('/', (req, res) => {
-  res.send('Menampilkan homepage');
-});
+app.use(router); 
 
-app.get('/pokemons', (req, res) => {
-  let filter = req.query.type;
-  
-  Model.readPokemons(filter, function (err, data) {
-    if (err) {
-      res.send(err);
-    } else {
-      res.render('pokemons.ejs', { pokemons: data });
-    }
-  });
-});
+// cara kedua
+// const homeRouter = require('./routes/home.js');
+// const pokemonRouter = require('./routes/pokemons.js');
 
-app.get('/pokemons/create', (req, res) => {
-  res.render('formPokemon.ejs');
-});
-
-app.post('/pokemons/create', (req, res) => {
-  const newPokemon = {
-    id: Number(req.body.id),
-    name: req.body.name,
-    type: req.body.type,
-    owner: req.body.owner
-  }
-  Model.createPokemon(newPokemon, function (err, newPokemon) {
-    if (err) {
-      res.send(err);
-    } else {
-      res.redirect('/pokemons');
-    }
-  });
-});
-
-app.get('/pokemons/:id', (req, res) => {
-  res.send('detail pokemon with id ' + req.params.id);
-});
+// app.use('/', homeRouter); // masuk dulu
+// app.use('/pokemons', pokemonRouter); // masuk lagi
 
 app.listen(port, () => {
   console.log(`Listening on the port: ${port}`);

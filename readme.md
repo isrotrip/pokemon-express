@@ -1,4 +1,4 @@
-### Latihan
+### Pokemon Application
 
 Buatlah sebuah class bernama Pokemon, yang memiliki properties sebagai berikut:
 
